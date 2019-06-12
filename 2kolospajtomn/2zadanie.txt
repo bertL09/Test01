@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-10, 10, 200)
+plt.subplot(1, 4, 1) # 1-ilosc rys. 2-
+plt.plot(x, (x**2)+(3*x+4), 'b', label="y=x^2+3*x+4")
+plt.grid(True)
+plt.title('Wykres pierwszej funkcji')
+plt.legend()
+plt.xlim(0, 10) #os x
+plt.ylim(-10, 50)
+plt.subplot(1, 4, 2)
+
+plt.plot(x, 25*np.sin(x), '.g', label="25*sin(x)")
+plt.grid(True)
+plt.title('Wykres drugiej funkcji')
+plt.legend()
+plt.xlim(0, 10)
+plt.ylim(-30, 40)
+plt.subplot(1, 4, 3)
+
+plt.plot(x, x**2+3*x+4, 'b', label="y=x^2+3*x+4")
+plt.plot(x, 25*np.sin(x), '.g', label="25*sin(x)")
+plt.grid(True)
+plt.title('Jedna funkcja na drugiej')
+plt.legend()
+plt.xlim(0, 10)
+plt.ylim(-30, 40)
+plt.savefig("fig3.png", dpi=72)
+plt.show()

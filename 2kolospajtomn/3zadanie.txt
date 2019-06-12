@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(1, 7, 0.1)
+y = np.sin(x) + 5*(x*x*x) + np.sqrt(x*x + 4*x +4)
+plt.plot(x, y, label="sin(x) + 5x^3 + sqrt(x^2 + 4x +4)")
+
+plt.xlabel('Oœ x')
+plt.ylabel('Oœ y')
+plt.title('Wykres funkcji y=e^x+sin(x)')
+plt.grid(True)
+plt.legend()
+plt.show()

@@ -1,0 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+data = pd.read_csv("mtcars.csv")
+df = pd.DataFrame(data)
+df.sort_values('cyl')
+df.columns = ['marka','mpg','cyl','disp','hp','drat','wt','qsec','vs','am','gear','carb']
+mniejDisp = (data[data['disp']<255])
+cyl4 = mniejDisp[mniejDisp['cyl'] ==4]
+cyl6 = mniejDisp[mniejDisp['cyl'] ==6]
+avg4 = np.average(cyl4['mpg'])
+avg6 = np.average(cyl6['mpg'])
+plt.bar(4,avg4, label='4 cylindry')
+plt.bar(6,avg6, label='6 cylindrów')
+plt.xlabel('Iloœæ cylindrów')
+plt.ylabel('Spalanie (mpg)')
+plt.legend()
+plt.title('Spalanie dla danej iloœci cylindrów')
+plt.savefig("spalanie.png", dpi=72)
+plt.show()
